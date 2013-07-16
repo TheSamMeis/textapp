@@ -9,6 +9,7 @@ Textapp::Application.routes.draw do
    
    post "login" => "sessions#create"
    delete "logout" => "sessions#destroy"
+   get "logout" => "sessions#destroy"
 
    root 'site#index'
 

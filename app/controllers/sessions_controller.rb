@@ -1,12 +1,20 @@
 class SessionsController < ApplicationController
   def new
+
   end
 
   def create
-  	redirect_to root_url
+  	user = User.authenticate(params[:email], params[:password])
+  	if user
+  		session[:user_id] = user.id 
+  		redirect_to root_url
+ 	else
+  		render :new
+  	end
   end
 
   def destroy
-  	redirect_to new_sessions_path
+  	session[:user_id] = nil
+  	redirect_to new_session_path
   end
 end
