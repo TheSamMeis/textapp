@@ -13,6 +13,8 @@ group :development, :test do
   gem "better_errors"
   gem "binding_of_caller"
   gem 'jasmine'
+  gem "fabrication"
+  gem "ffaker"
 end
 
 gem 'sass-rails', '~> 4.0.0'
